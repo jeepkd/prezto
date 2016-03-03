@@ -16,4 +16,10 @@ eval "$(rbenv init -)"
 # Customize to your needs...
 alias gl='git log --topo-order --all --graph --pretty=format:"${_git_log_oneline_format}"'
 alias gs='git status'
+alias gd='git diff'
+alias bi='bundle install'
 alias be='bundle exec'
+alias gaa='git add -A'
+alias sourcetree='open -a SourceTree'
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
