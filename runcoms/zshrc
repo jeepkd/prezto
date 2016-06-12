@@ -14,12 +14,35 @@ fi
 eval "$(rbenv init -)"
 
 # Customize to your needs...
-alias gl='git log --topo-order --all --graph --pretty=format:"${_git_log_oneline_format}"'
+alias gl='git log --topo-order --branches --remotes --tags --graph --pretty=format:"${_git_log_oneline_format}"'
+alias gl='git log --branches --remotes --tags --graph --oneline --decorate'
 alias gs='git status'
 alias gd='git diff'
 alias bi='bundle install'
 alias be='bundle exec'
+alias pi='pod install'
 alias gaa='git add -A'
 alias sourcetree='open -a SourceTree'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# Golang
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+# Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH=$PATH:$PYENV_ROOT/bin
+
+# Swap filename
+function swap()
+{
+    local TMPFILE=tmp.$$
+    mv "$1" $TMPFILE
+    mv "$2" "$1"
+    mv $TMPFILE "$2"
+}
+
+# Set up docker
+# eval `docker-machine env 2>/dev/null`
+alias dk='eval $(docker-machine env default)'
