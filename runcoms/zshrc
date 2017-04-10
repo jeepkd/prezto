@@ -1,4 +1,3 @@
-
 # Executes commands at the start of an interactive session.
 #
 # Authors:
@@ -10,9 +9,6 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Init rbenv
-eval "$(rbenv init -)"
-
 # Customize to your needs...
 alias gl='git log --topo-order --branches --remotes --tags --graph --pretty=format:"${_git_log_oneline_format}"'
 alias gl='git log --branches --remotes --tags --graph --oneline --decorate'
@@ -23,6 +19,11 @@ alias be='bundle exec'
 alias pi='pod install'
 alias gaa='git add -A'
 alias sourcetree='open -a SourceTree'
+alias fbt='sudo killall coreaudiod'
+alias gsync='git pull --rebase && git push'
+alias gss='git add -A && git stash'
+alias reload='. ~/.zshrc'
+alias vscode='code'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -30,9 +31,15 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
-# Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH=$PATH:$PYENV_ROOT/bin
+# Fix python encoding errors
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# Init rbenv
+eval "$(rbenv init -)"
+
+# Init pyenv
+eval "$(pyenv init -)"
 
 # Swap filename
 function swap()
@@ -43,6 +50,5 @@ function swap()
     mv $TMPFILE "$2"
 }
 
-# Set up docker
-# eval `docker-machine env 2>/dev/null`
-alias dk='eval $(docker-machine env default)'
+# Android
+# export PATH=$PATH:$HOME/Library/Android/sdk/tools
