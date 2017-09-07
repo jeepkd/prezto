@@ -31,7 +31,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
-# Fix python encoding errors
+# Python
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
@@ -50,5 +50,4 @@ function swap()
     mv $TMPFILE "$2"
 }
 
-# Android
-# export PATH=$PATH:$HOME/Library/Android/sdk/tools
+export PATH=$PATH:/Users/jeep/.vimpkg/bin
