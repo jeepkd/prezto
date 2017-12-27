@@ -62,4 +62,4 @@ export PATH=~/.npm-global/bin:$PATH
 # added by Miniconda2 installer
 export PATH="/home/datawow/miniconda2/bin:$PATH"
 
-export TERM=screen-256color-bce
+export TERM=xterm-256color
