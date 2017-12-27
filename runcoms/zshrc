@@ -36,10 +36,10 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # Init rbenv
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 
 # Init pyenv
-eval "$(pyenv init -)"
+# eval "$(pyenv init -)"
 
 # Swap filename
 function swap()
@@ -50,4 +50,16 @@ function swap()
     mv $TMPFILE "$2"
 }
 
-export PATH=$PATH:/Users/jeep/.vimpkg/bin
+# Android
+# export PATH=$PATH:$HOME/Library/Android/sdk/tools
+
+# CUDA lib
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64/
+
+# NodeJS
+export PATH=~/.npm-global/bin:$PATH
+
+# added by Miniconda2 installer
+export PATH="/home/datawow/miniconda2/bin:$PATH"
+
+export TERM=screen-256color-bce
