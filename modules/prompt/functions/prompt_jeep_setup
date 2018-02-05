@@ -124,7 +124,7 @@ function prompt_jeep_setup {
   #PROMPT='${SSH_TTY:+"%F{9}%n%f%F{7}@%f%F{3}%m%f "}%F{4}${_prompt_jeep_pwd}%(!. %B%F{1}#%f%b.)${editor_info[keymap]} '
 
   # Always show user@hostname
-  PROMPT='%F{9}%n%f%F{7}@%f%F{3}%m%f%F{4}${_prompt_jeep_pwd}%(!. %B%F{1}#%f%b.)${editor_info[keymap]} '
+  PROMPT='%F{9}%n%f%F{7}@%f%F{3}%m%f %F{4}${_prompt_jeep_pwd}%(!. %B%F{1}#%f%b.)${editor_info[keymap]} '
   RPROMPT=''
   SPROMPT='zsh: correct %F{1}%R%f to %F{2}%r%f [nyae]? '
 }
