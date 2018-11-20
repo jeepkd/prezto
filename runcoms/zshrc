@@ -63,7 +63,6 @@ export PATH=~/.npm-global/bin:$PATH
 
 # added by Miniconda3 installer
 export PATH="$HOME/miniconda3/bin:$PATH"
-export PATH="/opt/miniconda3/bin:$PATH"
 
 export TERM=xterm-256color
 export VISUAL=vim
