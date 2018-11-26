@@ -29,6 +29,9 @@ alias kx='kubectx'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# FZF initialization
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Golang
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
@@ -43,15 +46,6 @@ export LANG=en_US.UTF-8
 # Init pyenv
 #eval "$(pyenv init -)"
 
-# Swap filename
-function swap()
-{
-    local TMPFILE=tmp.$$
-    mv "$1" $TMPFILE
-    mv "$2" "$1"
-    mv $TMPFILE "$2"
-}
-
 # Android
 # export PATH=$PATH:$HOME/Library/Android/sdk/tools
 
@@ -61,10 +55,16 @@ export LD_LIBRARY_PATH=/usr/local/cuda/lib64/
 # NodeJS
 export PATH=~/.npm-global/bin:$PATH
 
-# added by Miniconda3 installer
+# Added by Miniconda3 installer
 export PATH="$HOME/miniconda3/bin:$PATH"
 
+# Correct color profile
 export TERM=xterm-256color
+
+# Set default editor
 export VISUAL=vim
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# %%
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+
