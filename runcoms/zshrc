@@ -63,7 +63,7 @@ export TERM=xterm-256color
 
 # Set default editor
 export VISUAL=vim
-
+export EDITOR=vim
 
 # %%
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
