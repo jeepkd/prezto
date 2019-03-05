@@ -43,10 +43,14 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # Init rbenv
-#eval "$(rbenv init -)"
+if typeset -f rbenv > /dev/null; then
+  eval "$(rbenv init -)"
+fi
 
 # Init pyenv
-#eval "$(pyenv init -)"
+if [ -x "$(command -v pyenv)" ]; then
+  eval "$(pyenv init -)"
+fi
 
 # Android
 # export PATH=$PATH:$HOME/Library/Android/sdk/tools
