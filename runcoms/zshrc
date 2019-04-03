@@ -62,9 +62,6 @@ export LD_LIBRARY_PATH=/usr/local/cuda/lib64/
 # NodeJS
 export PATH=~/.npm-global/bin:$PATH
 
-# Added by Miniconda3 installer
-export PATH="$HOME/miniconda3/bin:$PATH"
-
 # Correct color profile
 export TERM=xterm-256color
 
@@ -79,4 +76,20 @@ function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 if [[ $TILIX_ID ]]; then
         source /etc/profile.d/vte.sh
 fi
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/jeep/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/jeep/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/jeep/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/jeep/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
