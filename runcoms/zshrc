@@ -43,6 +43,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # Init rbenv
+export PATH=$HOME/.rbenv/bin:$PATH
 [ -x "$(command -v rbenv)" ] && eval "$(rbenv init -)"
 
 # Init pyenv
