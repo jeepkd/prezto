@@ -102,3 +102,10 @@ if [ -f '/Users/jeep/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jeep/googl
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/jeep/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jeep/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Autocompletion for helm
+source <(helm completion zsh)
+
+# Autocompletion for kubectl
+source <(kubectl completion zsh)
+
