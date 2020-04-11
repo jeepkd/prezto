@@ -26,6 +26,7 @@ alias reload='. ~/.zshrc'
 alias vscode='code'
 alias kc='kubectl'
 alias kx='kubectx'
+alias kn='kubens'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
