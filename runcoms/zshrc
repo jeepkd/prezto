@@ -123,4 +123,4 @@ source <(helm completion zsh)
 # Autocompletion for kubectl
 source <(kubectl completion zsh)
 
-
+source <(eksctl completion zsh)
