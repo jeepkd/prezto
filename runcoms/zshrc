@@ -27,6 +27,7 @@ alias vscode='code'
 alias kc='kubectl'
 alias kx='kubectx'
 alias kn='kubens'
+alias rm-evicted="kubectl get pods --all-namespaces --field-selector 'status.phase==Failed' -o json | kubectl delete -f -"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
