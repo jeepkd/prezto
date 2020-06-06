@@ -73,7 +73,7 @@ export VISUAL=vim
 export EDITOR=vim
 
 # Setup conda
-export PATH="/Users/jeep/miniconda3/bin:$PATH"
+# export PATH="/Users/jeep/miniconda3/bin:$PATH"  # commented out by conda initialize
 
 # Setup istio
 export PATH=$PATH:$HOME/.istioctl/bin
