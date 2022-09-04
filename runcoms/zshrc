@@ -50,13 +50,6 @@ export PATH=$PATH:$GOPATH/bin
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# Init rbenv
-export PATH=$HOME/.rbenv/bin:$PATH
-[ -x "$(command -v rbenv)" ] && eval "$(rbenv init -)"
-
-# Init pyenv
-[ -x "$(command -v pyenv)" ] && eval "$(pyenv init -)"
-
 # Init nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -140,7 +133,10 @@ if [ -f '/Users/jeep/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jeep
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
-export PATH="$HOME/.poetry/bin:$PATH"
 
 # asdf version manager
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# poetry setup
+export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
