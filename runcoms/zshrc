@@ -31,6 +31,9 @@ alias rm-evicted="kubectl get pods --all-namespaces --field-selector 'status.pha
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# Additional path
+export PATH=$PATH:$HOME/bin
+
 # FZF initialization
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
@@ -135,8 +138,24 @@ if [ -f '/Users/jeep/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jeep
 
 
 # asdf version manager
+[ -f '/opt/homebrew/opt/asdf/libexec/asdf.sh' ] &&
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # poetry setup
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+
+# Fix git gpg signing 
+export GPG_TTY=$(tty)
+
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+
+# terraform autocomplete
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
