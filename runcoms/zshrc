@@ -28,7 +28,6 @@ alias kc='kubectl'
 alias kx='kubectx'
 alias kn='kubens'
 alias rm-evicted="kubectl get pods --all-namespaces --field-selector 'status.phase==Failed' -o json | kubectl delete -f -"
-alias awsume=". $(asdf which awsume)" #TODO: Remove unfixed lib
 
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
@@ -77,7 +76,7 @@ export VISUAL=vim
 export EDITOR=vim
 
 # Setup conda
-# export PATH="/Users/jeep/miniconda3/bin:$PATH"  # commented out by conda initialize
+export PATH="/Users/jeep/miniconda3/bin:$PATH"
 
 # Setup istio
 export PATH=$PATH:$HOME/.istioctl/bin
@@ -101,27 +100,6 @@ if [[ $TILIX_ID ]]; then
         source /etc/profile.d/vte.sh
 fi
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/jeep/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/jeep/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/jeep/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/jeep/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/jeep/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jeep/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/jeep/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jeep/google-cloud-sdk/completion.zsh.inc'; fi
-
 # Autocompletion for helm
 #source <(helm completion zsh)
 
@@ -140,8 +118,11 @@ source <(kubectl completion zsh)
 
 
 # asdf version manager
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 [ -f '/opt/homebrew/opt/asdf/libexec/asdf.sh' ] &&
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+
 
 # poetry setup
 export PATH="$HOME/.poetry/bin:$PATH"
@@ -169,3 +150,13 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # Flutter
 export PATH=$HOME/development/flutter/bin:$PATH
 
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jeep/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jeep/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/jeep/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jeep/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Use 1password ssh agent
+export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+
+alias awsume=". $(asdf which awsume)"
