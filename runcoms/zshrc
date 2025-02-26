@@ -160,3 +160,5 @@ if [ -f '/Users/jeep/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 
 alias awsume=". $(asdf which awsume)"
+
+export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
